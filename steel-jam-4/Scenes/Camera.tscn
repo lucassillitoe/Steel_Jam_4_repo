@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ufwv365gldxh"]
 
 [ext_resource type="Script" uid="uid://pfw624ta6ke4" path="res://Scripts/UIForPlaybackMode.gd" id="1_na4qu"]
+[ext_resource type="Script" uid="uid://cqrsktfcm6isb" path="res://Scripts/CameraMovement.gd" id="1_tsbx5"]
 [ext_resource type="FontFile" uid="uid://bc48fedfock2y" path="res://Assets/PixelPurl.ttf" id="1_yqtc1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4hww8"]
@@ -8,8 +9,10 @@ font = ExtResource("1_yqtc1")
 font_size = 50
 
 [node name="Camera" type="Node2D" unique_id=640432073]
+script = ExtResource("1_tsbx5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=500033909]
+zoom = Vector2(0.9, 0.9)
 
 [node name="UI" type="Control" parent="." unique_id=944508092]
 layout_mode = 3

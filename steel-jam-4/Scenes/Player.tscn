@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://8n0qk2i80rta"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
+[ext_resource type="Script" path="res://Scripts/PlayerInputBasic.gd" id="1_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
-[ext_resource type="PackedScene" uid="uid://ufwv365gldxh" path="res://Scenes/Camera.tscn" id="3_gntrk"]
-[ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="4_5ixxa"]
-[ext_resource type="PackedScene" uid="uid://depcrptedr4e8" path="res://Scenes/Scorer.tscn" id="5_nn08x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -29,13 +27,9 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_e80uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669063506]
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_cxr5p")
 
-[node name="Camera" parent="." unique_id=640432073 instance=ExtResource("3_gntrk")]
-
 [node name="Player input" type="Node" parent="." unique_id=965260646 node_paths=PackedStringArray("player")]
-script = ExtResource("4_5ixxa")
-player = NodePath("..")
-
-[node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("player") instance=ExtResource("5_nn08x")]
+script = ExtResource("1_nn08x")
 player = NodePath("..")

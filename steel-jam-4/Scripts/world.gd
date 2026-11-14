@@ -12,7 +12,7 @@ var RoomsVisited: Array[Node2D] = []
 
 const ChunkSize:= Vector2(1280, 720)
 
-var NextSpawnPosition: Vector2 = Vector2(640, -360)
+var NextSpawnPosition: Vector2 = Vector2(640, -500)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
