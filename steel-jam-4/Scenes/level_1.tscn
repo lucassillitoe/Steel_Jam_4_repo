@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://0hfb7pye7juf"]
+
+[ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://icon.svg" id="1_3hls8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p73qd"]
+size = Vector2(130, 128)
+
+[node name="Level1" type="Node2D" unique_id=1862300251]
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=114860117]
+position = Vector2(179, 590)
+scale = Vector2(3.2000012, 0.68)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=1827378005]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=66424875]
+shape = SubResource("RectangleShape2D_p73qd")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1444496530]
+position = Vector2(574, 627)
+scale = Vector2(3.2000012, 0.68)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2" unique_id=344250314]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1765855797]
+shape = SubResource("RectangleShape2D_p73qd")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1669109673]
+position = Vector2(963, 577)
+scale = Vector2(3.2000012, 0.68)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3" unique_id=255070185]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1005082706]
+shape = SubResource("RectangleShape2D_p73qd")
+
+[node name="StartMarker" type="Marker2D" parent="." unique_id=1066193840]
+
+[node name="EndMarker" type="Marker2D" parent="." unique_id=1646833628]
+position = Vector2(1152, 0)
