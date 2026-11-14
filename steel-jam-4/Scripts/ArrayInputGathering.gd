@@ -45,10 +45,10 @@ func _physics_process(delta: float) -> void:
 	
 	#When playing back inputs
 	if currentState == state.PLAYING_BACK and not inputContainer.is_empty():
-		print("Playing back", playbackIndex, "/", len(inputContainer))
+		print("Playing back ", playbackIndex, "/", len(inputContainer))
 	
 			
-			#Executes the input
+		#Executes the input
 		var inputsThisTick = inputContainer[playbackIndex]
 			
 		if inputs.JUMP in inputsThisTick:
@@ -63,18 +63,18 @@ func _physics_process(delta: float) -> void:
 		player.MoveHorizontal(horizontalInputSum, delta)
 			
 			
-			#Skips ahead if stationary to avoid waiting
+		#Skips ahead if stationary to avoid waiting
 		if player.playerVelocity == Vector2(0, 0):
 			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
 				playbackIndex += 1
 			
 			
-			#When it reaches the end of the current sequence
+		#When it reaches the end of the current sequence
 		if playbackIndex >= len(inputContainer) - 1:
 			currentState = state.INPUTTING
 			inputContainer.clear()
 				
-				#Stops the player from moving
+			#Stops the player from moving
 			player.MoveHorizontal(0, delta)
 			
 			
