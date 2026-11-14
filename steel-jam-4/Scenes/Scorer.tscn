@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cxg247wgjm5k6" path="res://Scripts/Scorer.gd" id="1_qbqup"]
 
-[node name="Scorer" type="Node2D" unique_id=1553671718 node_paths=PackedStringArray("Scorer")]
+[node name="Scorer" type="Node2D" unique_id=1553671718]
 script = ExtResource("1_qbqup")
-Scorer = NodePath(".")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=920667146]
 offset_left = -24.0
-offset_top = -384.0
+offset_top = -360.0
 offset_right = 24.0
-offset_bottom = 384.0
+offset_bottom = 360.0
 color = Color(1, 0, 0, 0.39607844)
