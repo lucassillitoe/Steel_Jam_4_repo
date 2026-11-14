@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8n0qk2i80rta" path="res://Scenes/Player.tscn" id="5_kn06e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07qy"]
-size = Vector2(1167, 129)
+size = Vector2(1280, 128)
 
 [node name="World" type="Node2D" unique_id=555161220 node_paths=PackedStringArray("Player")]
 script = ExtResource("1_45d1s")
@@ -15,16 +15,16 @@ RoomsArray = Array[PackedScene]([ExtResource("2_y7y61"), ExtResource("3_q2d71")]
 Player = NodePath("Player")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=315756783]
-position = Vector2(566, 655.00006)
+position = Vector2(0, 140)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=2078496933]
-scale = Vector2(9.1, 1)
+position = Vector2(3.8146973e-05, -11.99999)
+scale = Vector2(10, 1.0000001)
 texture = ExtResource("4_uo7di")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1435258774]
-position = Vector2(4.5, -1.5)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_t07qy")
 
 [node name="Player" parent="." unique_id=1786778758 instance=ExtResource("5_kn06e")]
-position = Vector2(466, 443)

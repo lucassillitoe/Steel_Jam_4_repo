@@ -28,7 +28,6 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_e80uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669063506]
-position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_cxr5p")
 
 [node name="Camera" parent="." unique_id=640432073 instance=ExtResource("3_gntrk")]
