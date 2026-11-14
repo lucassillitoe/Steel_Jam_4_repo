@@ -7,6 +7,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x = GLOBAL_VARIABLES.PlayerPosition.x
 	position.y = 0
 	
+	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.INPUTTING:
+		if Input.is_action_just_pressed("MoveCameraRight"):
+			position.x += 50
+	
+		elif Input.is_action_just_pressed("MoveCameraLeft"):
+			position.x -= 50
+			
+	else:
+		position.x = GLOBAL_VARIABLES.PlayerPosition.x
+		
