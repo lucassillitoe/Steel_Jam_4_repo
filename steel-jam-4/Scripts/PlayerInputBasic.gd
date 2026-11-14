@@ -5,7 +5,7 @@ enum state {INPUTTING, PLAYING_BACK}
 @onready var currentState := state.INPUTTING
 
 #Reference to the player
-@onready var player =  $"../Player"
+@onready var player =  $".."
 
 
 

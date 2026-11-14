@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player =  $Player
+@onready var player =  $".."
 @onready var score = 0
 
 
@@ -11,5 +11,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var playerPosition = player.transform.position
-	print(playerPosition)
+	pass
+	#var playerPosition = player.transform.position
+	#print(playerPosition)

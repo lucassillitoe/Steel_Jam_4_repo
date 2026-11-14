@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
 [ext_resource type="PackedScene" uid="uid://ufwv365gldxh" path="res://Scenes/Camera.tscn" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="4_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://depcrptedr4e8" path="res://Scenes/Scorer.tscn" id="5_nn08x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -30,3 +32,8 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_cxr5p")
 
 [node name="Camera" parent="." unique_id=640432073 instance=ExtResource("3_gntrk")]
+
+[node name="Player input" type="Node" parent="." unique_id=965260646]
+script = ExtResource("4_5ixxa")
+
+[node name="Scorer" parent="." unique_id=1553671718 instance=ExtResource("5_nn08x")]

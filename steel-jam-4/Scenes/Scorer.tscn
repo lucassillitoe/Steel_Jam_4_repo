@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://depcrptedr4e8"]
 
+[ext_resource type="Script" uid="uid://cxg247wgjm5k6" path="res://Scripts/Scorer.gd" id="1_qbqup"]
+
 [node name="Scorer" type="Node2D" unique_id=1553671718]
+script = ExtResource("1_qbqup")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=920667146]
 offset_left = -24.0

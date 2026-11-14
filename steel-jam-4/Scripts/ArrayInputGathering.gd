@@ -14,7 +14,7 @@ var inputContainer = []
 var playbackIndex = 0 
 
 #Reference to the player
-@onready var player =  $"../Player"
+@onready var player =  $".."
 
 
 #calls every frame
