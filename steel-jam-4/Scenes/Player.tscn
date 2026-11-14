@@ -33,7 +33,9 @@ shape = SubResource("RectangleShape2D_cxr5p")
 
 [node name="Camera" parent="." unique_id=640432073 instance=ExtResource("3_gntrk")]
 
-[node name="Player input" type="Node" parent="." unique_id=965260646]
+[node name="Player input" type="Node" parent="." unique_id=965260646 node_paths=PackedStringArray("player")]
 script = ExtResource("4_5ixxa")
+player = NodePath("..")
 
-[node name="Scorer" parent="." unique_id=1553671718 instance=ExtResource("5_nn08x")]
+[node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("player") instance=ExtResource("5_nn08x")]
+player = NodePath("..")

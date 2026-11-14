@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player =  $".."
+@export var player: CharacterBody2D
 @onready var score = 0
 
 
@@ -11,6 +11,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	#var playerPosition = player.transform.position
-	#print(playerPosition)
+	var playerPosition = player.position
+	print(playerPosition)

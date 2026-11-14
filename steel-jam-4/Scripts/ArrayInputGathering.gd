@@ -1,9 +1,5 @@
 extends Node
 
-#The current state of input
-enum state {INPUTTING, PLAYING_BACK}
-@onready var currentState := state.INPUTTING
-
 #All the available inputs
 enum inputs {JUMP, LEFT, RIGHT}
 
@@ -14,12 +10,12 @@ var inputContainer = []
 var playbackIndex = 0 
 
 #Reference to the player
-@onready var player =  $".."
+@export var player: CharacterBody2D
 
 
 #calls every frame
 func _physics_process(delta: float) -> void:
-	if currentState == state.INPUTTING:
+	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.INPUTTING:
 		#Stops the player from moving
 		player.MoveHorizontal(0, delta)
 		
@@ -41,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		
 		#Finish movement sequence and play it
 		if Input.is_action_just_pressed("Enter playback"):
-			currentState = state.PLAYING_BACK
+			GLOBAL_VARIABLES.currentState = GLOBAL_VARIABLES.state.PLAYING_BACK
 			print(inputContainer)
 			playbackIndex = 0
 		
@@ -49,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	#When playing back inputs
-	if currentState == state.PLAYING_BACK and not inputContainer.is_empty():
+	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.PLAYING_BACK and not inputContainer.is_empty():
 		print("Playing back ", playbackIndex, "/", len(inputContainer) - 1)
 		
 		
@@ -76,7 +72,7 @@ func _physics_process(delta: float) -> void:
 			
 		#When it reaches the end of the current sequence
 		if playbackIndex >= len(inputContainer) - 1:
-			currentState = state.INPUTTING
+			GLOBAL_VARIABLES.currentState = GLOBAL_VARIABLES.state.INPUTTING
 			inputContainer.clear()
 			
 			
