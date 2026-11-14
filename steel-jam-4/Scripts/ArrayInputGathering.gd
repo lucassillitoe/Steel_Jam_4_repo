@@ -69,8 +69,8 @@ func _physics_process(delta: float) -> void:
 		
 			
 		#Skips ahead if stationary to avoid waiting
-		if player.playerVelocity == Vector2(0, 0):
-			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 2:
+		if player.playerVelocity == Vector2(0, 0) and playbackIndex < len(inputContainer) - 1:
+			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
 				playbackIndex += 1
 			
 			
