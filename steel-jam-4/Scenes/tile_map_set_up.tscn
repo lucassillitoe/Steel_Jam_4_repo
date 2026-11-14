@@ -48,10 +48,14 @@ texture_region_size = Vector2i(8, 8)
 9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 9:4/0 = 0
 9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+15:11/0 = 0
+15:11/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 1.8029256, 4, 1.8029256, 4, 4, -4, 4)
 
 [sub_resource type="TileSet" id="TileSet_6whob"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 3
+physics_layer_1/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_sdl5u")
 
 [node name="TileMapSetUp" type="Node2D" unique_id=699258563]
@@ -60,4 +64,3 @@ sources/0 = SubResource("TileSetAtlasSource_sdl5u")
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_6whob")
 format = 2
-layer_0/tile_data = PackedInt32Array(458756, 524288, 3, 458757, 524288, 3, 458758, 524288, 3, 458759, 524288, 3, 458760, 524288, 3, 458761, 524288, 3, 458762, 524288, 3, 458763, 524288, 3, 458764, 524288, 3)

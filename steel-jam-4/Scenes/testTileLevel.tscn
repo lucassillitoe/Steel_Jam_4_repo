@@ -4,12 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://da7vm8o44fes5" path="res://Scenes/tile_map_set_up.tscn" id="2_d51dv"]
 
 [node name="test tile level" type="Node2D" unique_id=491712952]
+position = Vector2(499, 7)
 
 [node name="Player" parent="." unique_id=1786778758 instance=ExtResource("1_d00e7")]
-position = Vector2(558, 325)
+position = Vector2(138.99997, 353)
 scale = Vector2(0.4, 0.4)
+collision_mask = 3
 
 [node name="TileMapSetUp" parent="." unique_id=699258563 instance=ExtResource("2_d51dv")]
+position = Vector2(2, -7)
 
 [node name="TileMap" parent="TileMapSetUp" index="0" unique_id=840498264]
 texture_filter = 1
