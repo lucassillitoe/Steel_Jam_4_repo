@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://w61ke2cfyl54" path="res://Scripts/world.gd" id="1_5a7ea"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://8n0qk2i80rta" path="res://Scenes/Player.tscn" id="2_5a7ea"]
-<<<<<<< Updated upstream
+
 [ext_resource type="PackedScene" uid="uid://0hfb7pye7juf" path="res://Scenes/level_1.tscn" id="2_fo5ed"]
 [ext_resource type="Script" uid="uid://ckq88tnckmoqw" path="res://Scripts/PlayerInputBasic.gd" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://b5txh8gsi65ks" path="res://Scenes/level_2.tscn" id="3_5ukr8"]
-=======
 [ext_resource type="Script" uid="uid://c73xu2265lhvm" path="res://Scripts/PlayerInputBasic.gd" id="3_5a7ea"]
->>>>>>> Stashed changes
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07qy"]
 size = Vector2(1167, 129)
@@ -32,9 +31,6 @@ shape = SubResource("RectangleShape2D_t07qy")
 
 [node name="Player" parent="." unique_id=1786778758 instance=ExtResource("2_5a7ea")]
 
-<<<<<<< Updated upstream
 [node name="Player input" type="Node" parent="." unique_id=1558028905]
-=======
-[node name="Player Input" type="Node" parent="." unique_id=467034702]
->>>>>>> Stashed changes
+
 script = ExtResource("3_5a7ea")
