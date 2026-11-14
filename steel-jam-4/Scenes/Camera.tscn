@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://ufwv365gldxh"]
 
+[ext_resource type="Script" uid="uid://pfw624ta6ke4" path="res://Scripts/UIForPlaybackMode.gd" id="1_na4qu"]
+[ext_resource type="FontFile" uid="uid://bc48fedfock2y" path="res://Assets/PixelPurl.ttf" id="1_yqtc1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hww8"]
+font = ExtResource("1_yqtc1")
+font_size = 50
+
 [node name="Camera" type="Node2D" unique_id=640432073]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=500033909]
@@ -9,3 +16,75 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Playback overlay" type="Control" parent="UI" unique_id=808164939]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_na4qu")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Playback overlay" unique_id=1604067812]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -360.0
+offset_right = -600.0
+offset_bottom = 320.0
+grow_vertical = 2
+offset_transform_position = Vector2(-0.37, 0)
+color = Color(0.73333335, 0.14901961, 0.18431373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Playback overlay" unique_id=1163712669]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 600.0
+offset_top = -360.0
+offset_right = 620.0
+offset_bottom = 320.0
+grow_vertical = 2
+offset_transform_position = Vector2(-0.37, 0)
+color = Color(0.73333335, 0.14901961, 0.18431373, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Playback overlay" unique_id=644566939]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -360.0
+offset_right = 620.0
+offset_bottom = -340.0
+grow_vertical = 2
+offset_transform_position = Vector2(-0.37, 0)
+color = Color(0.73333335, 0.14901961, 0.18431373, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="UI/Playback overlay" unique_id=1991971685]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = 300.0
+offset_right = 620.0
+offset_bottom = 320.0
+grow_vertical = 2
+offset_transform_position = Vector2(-0.37, 0)
+color = Color(0.73333335, 0.14901961, 0.18431373, 1)
+
+[node name="Label" type="Label" parent="UI/Playback overlay" unique_id=969559795]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -16.0
+anchor_top = -9.0
+anchor_right = -16.0
+anchor_bottom = -9.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 194.0
+offset_bottom = 94.0
+text = "Playing..."
+label_settings = SubResource("LabelSettings_4hww8")

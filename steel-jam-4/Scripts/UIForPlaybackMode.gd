@@ -1,6 +1,6 @@
 extends Node
 
-@onready var playerInput =  $"../../../Player input"
+@onready var playerInput =  $"../../../../Player input"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +9,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if playerInput.currentState == playerInput.state.INPUTTING:
-		self.modulate = Color(1, 0, 0, 1)
-	else:
-		self.modulate = Color(0, 1, 0, 1)
+	self.visible = (playerInput.currentState == playerInput.state.PLAYING_BACK)

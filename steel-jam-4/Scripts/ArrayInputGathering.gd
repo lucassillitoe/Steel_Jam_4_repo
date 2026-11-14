@@ -44,38 +44,39 @@ func _physics_process(delta: float) -> void:
 	
 	
 	#When playing back inputs
-	if currentState == state.PLAYING_BACK:
-		#check is array contains elements
-		if not inputContainer.is_empty():
-			print("Playing back", playbackIndex, "/", len(inputContainer))
+	if currentState == state.PLAYING_BACK and not inputContainer.is_empty():
+		print("Playing back", playbackIndex, "/", len(inputContainer))
 	
 			
 			#Executes the input
-			var inputsThisTick = inputContainer[playbackIndex]
+		var inputsThisTick = inputContainer[playbackIndex]
 			
-			if inputs.JUMP in inputsThisTick:
-				player.Jump()
+		if inputs.JUMP in inputsThisTick:
+			player.Jump()
 			
-			var horizontalInputSum := 0
-			if inputs.LEFT in inputsThisTick:
-				horizontalInputSum -= 1
-			if inputs.RIGHT in inputsThisTick:
-				horizontalInputSum += 1
+		var horizontalInputSum := 0
+		if inputs.LEFT in inputsThisTick:
+			horizontalInputSum -= 1
+		if inputs.RIGHT in inputsThisTick:
+			horizontalInputSum += 1
 			
-			player.MoveHorizontal(horizontalInputSum, delta)
+		player.MoveHorizontal(horizontalInputSum, delta)
 			
 			
 			#Skips ahead if stationary to avoid waiting
-			if player.playerVelocity == Vector2(0, 0):
-				while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
-					playbackIndex += 1
+		if player.playerVelocity == Vector2(0, 0):
+			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
+				playbackIndex += 1
 			
 			
 			#When it reaches the end of the current sequence
-			if playbackIndex >= len(inputContainer) - 1:
-				currentState = state.INPUTTING
-				inputContainer.clear()
+		if playbackIndex >= len(inputContainer) - 1:
+			currentState = state.INPUTTING
+			inputContainer.clear()
+				
+				#Stops the player from moving
+			player.MoveHorizontal(0, delta)
 			
 			
 			#Increments the current step
-			playbackIndex += 1
+		playbackIndex += 1

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
+[ext_resource type="PackedScene" uid="uid://ufwv365gldxh" path="res://Scenes/Camera.tscn" id="3_gntrk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -28,4 +29,4 @@ sprite_frames = SubResource("SpriteFrames_e80uo")
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_cxr5p")
 
-[node name="Player" type="Node2D" parent="." unique_id=1124715086]
+[node name="Camera" parent="." unique_id=640432073 instance=ExtResource("3_gntrk")]
