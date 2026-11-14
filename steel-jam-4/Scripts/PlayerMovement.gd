@@ -9,6 +9,8 @@ const AIR_DECLERATION = 500.0
 
 const JUMP_VELOCITY = 500.0
 
+@onready var playerVelocity := velocity
+
 
 func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	##Takes in inputAxis: a float between -1 and 1 and delta: the physics tick
@@ -34,5 +36,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	
+	#Adds a reference for velocity for other scripts
+	playerVelocity = velocity
 	
 	move_and_slide()
