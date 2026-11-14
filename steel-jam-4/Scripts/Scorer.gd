@@ -1,7 +1,8 @@
 extends Node
 
-@export var player: CharacterBody2D
 @onready var score = 0
+@export var Scorer: Node2D
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,4 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var playerPosition = player.position
+	var playerPosition = GLOBAL_VARIABLES.PlayerPosition.x
+	if playerPosition > Scorer.position.x:
+		Scorer.position.x = playerPosition
+	Scorer.position.y = 0
