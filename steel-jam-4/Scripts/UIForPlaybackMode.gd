@@ -1,6 +1,6 @@
 extends Node
 
-@onready var playerInput =  $"../../../../Player input"
+@onready var playerInput =  $"../../../Player input"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
