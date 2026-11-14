@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://g10mf0eu444k"]
 
-[ext_resource type="FontFile" uid="uid://xpb1vxdohq0g" path="res://Assets/light_pixel-7.ttf" id="1_m6e0p"]
 [ext_resource type="Script" uid="uid://deo1xdctljyq6" path="res://Scripts/ui.gd" id="1_waa4j"]
 [ext_resource type="Texture2D" uid="uid://d0vwtd0a7qg0f" path="res://Assets/Button Light.png" id="2_27fn8"]
-[ext_resource type="FontFile" uid="uid://cc2vnrbx4l7qs" path="res://Assets/PixelPurl.ttf" id="3_27fn8"]
+[ext_resource type="FontFile" uid="uid://bc48fedfock2y" path="res://Assets/PixelPurl.ttf" id="3_27fn8"]
 [ext_resource type="Texture2D" uid="uid://dych78034ov0q" path="res://Assets/Menu.png" id="4_nltto"]
 [ext_resource type="Texture2D" uid="uid://d0saqfhbbb3m8" path="res://Assets/Button.png" id="5_y4yjw"]
 [ext_resource type="Texture2D" uid="uid://rnjm1n0vk6jd" path="res://Assets/Ball Slider.png" id="6_waa4j"]
 [ext_resource type="Texture2D" uid="uid://xa3sgc4f5snf" path="res://Assets/SliderBody.png" id="7_ok7cu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmtgh"]
-font = ExtResource("1_m6e0p")
+font = ExtResource("3_27fn8")
 font_size = 118
 outline_size = 45
 outline_color = Color(0, 0, 0, 1)

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8n0qk2i80rta"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
-[ext_resource type="Script" path="res://Scripts/PlayerInputBasic.gd" id="1_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
+[ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="4_5ixxa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -32,5 +32,5 @@ position = Vector2(-0.5, -64)
 shape = SubResource("RectangleShape2D_cxr5p")
 
 [node name="Player input" type="Node" parent="." unique_id=965260646 node_paths=PackedStringArray("player")]
-script = ExtResource("1_nn08x")
+script = ExtResource("4_5ixxa")
 player = NodePath("..")
