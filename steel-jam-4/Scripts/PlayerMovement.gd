@@ -33,6 +33,16 @@ func Jump() -> void:
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
 
+func CheckIfDied() -> bool:
+	## (check for layer 2 to kill player)
+	## Checks if the player is touching layer 2 
+	## Returns true if it is false if it isnt
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
+		if layer & (1 << 1):  # bit 1 = physics layer 2
+			return true
+	return false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity for the player.
@@ -44,3 +54,8 @@ func _physics_process(delta: float) -> void:
 	playerVelocity = velocity
 	
 	move_and_slide()
+	
+	# check if the player is touching layer 2 to kill him
+	if CheckIfDied():
+		#print('gg')
+		pass
