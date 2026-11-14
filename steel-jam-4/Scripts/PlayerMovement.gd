@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+#Parameters for player movement
 const SPEED = 500.0
 
 const ACCLERATION = 5000.0

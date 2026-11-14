@@ -1,43 +1,72 @@
 extends Node
 
+#The current state of input
+enum state {INPUTTING, PLAYING_BACK}
+var currentState := state.INPUTTING
+
+#All the available inputs
+enum inputs {JUMP, LEFT, RIGHT}
+
 #variable for the list of inputs 
 var inputContainer = []
 
-#variable for the count for itterating through the list
-var count = 0 
+#variable for the count for itterating through the list when playing back
+var playbackIndex = 0 
 
-#sub in for the player in the scene
-@onready var player : CharacterBody2D
+#Reference to the player
+@onready var player =  $"../Player"
 
 #calls every frame
 func _process(delta: float) -> void:
-	#reads keyboard input and appends to the array
-	if Input.is_action_just_pressed("ui_accept"):
-		inputContainer.append("ui_accept")
-	elif Input.is_action_just_pressed("ui_right"):
-		inputContainer.append("ui_right")
-	elif Input.is_action_just_pressed("enter"):
-		inputContainer.append("enter")
-	print(inputContainer)
+	if currentState == state.INPUTTING:
+		#reads keyboard input and appends to the array
+		
+		#Movement input for this frame
+		var inputsThisFrame = []
+		
+		if Input.is_action_just_pressed("Jump"):
+			inputsThisFrame.append(inputs.JUMP)
+		if Input.is_action_pressed("Left"):
+			inputsThisFrame.append(inputs.LEFT)
+		if Input.is_action_pressed("Right"):
+			inputsThisFrame.append(inputs.RIGHT)
+			
+		inputContainer.append(inputsThisFrame)
+		
+		
+		#Finish movement sequence and play it
+		if Input.is_action_just_pressed("Enter playback"):
+			currentState = state.PLAYING_BACK
+			playbackIndex = 0
+		
+		#print(inputContainer)
 	
-	#check is array contains elements
-	if not inputContainer.is_empty():
-		#runs only if enter has been pressed
-		if inputContainer.back() == "enter":
-			#is the player not moving/ action has been completed
-			if player.velocity.y <= 0.05 and player.velocity.x <= 0.05 and velocity.y >= -0.05:
-				#inputs for left, right, jump, etc
-				#when adding in an action add one to count each time
-				if inputContainer[count] == "ui_accept":
-					
-					count += 1
-				elif inputContainer[count] == "ui_right":
-					
-					count += 1
-				#enter is for the end of the array
-				elif inputContainer[count] == "enter":
-					#clears the array to start again
-					inputContainer.clear()
-					#resets count for itteration
-					count = 0
 	
+	#When playing back inputs
+	if currentState == state.PLAYING_BACK:
+		#check is array contains elements
+		if not inputContainer.is_empty():
+			#print("Playing back", playbackIndex, "/", len(inputContainer))
+			
+			#Executes the input
+			var inputsThisTick = inputContainer[playbackIndex]
+			
+			if inputs.JUMP in inputsThisTick:
+				player.Jump()
+			
+			var horizontalInputSum := 0
+			if inputs.LEFT in inputsThisTick:
+				horizontalInputSum -= 1
+			if inputs.RIGHT in inputsThisTick:
+				horizontalInputSum += 1
+			
+			player.MoveHorizontal(horizontalInputSum, delta)
+			
+			
+			#When it reaches the end
+			if playbackIndex >= len(inputContainer):
+				currentState = state.INPUTTING
+				inputContainer.clear()
+			
+			#Increments the current step
+			playbackIndex += 1

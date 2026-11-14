@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8n0qk2i80rta"]
 
-[ext_resource type="Script" uid="uid://uuhsu0xhuyso" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
-
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]

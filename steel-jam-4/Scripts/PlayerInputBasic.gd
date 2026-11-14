@@ -1,5 +1,6 @@
 extends Node
 
+#Reference to the player
 @onready var player =  $"../Player"
 
 
