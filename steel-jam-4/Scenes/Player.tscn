@@ -18,7 +18,6 @@ animations = [{
 size = Vector2(131, 130)
 
 [node name="Player" type="CharacterBody2D" unique_id=1786778758]
-position = Vector2(558, 325)
 script = ExtResource("1_kpjcp")
 metadata/_edit_group_ = true
 

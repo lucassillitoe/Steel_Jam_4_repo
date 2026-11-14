@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ufwv365gldxh"]
+
+[node name="Camera" type="Node2D" unique_id=640432073]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=500033909]
+
+[node name="UI" type="Control" parent="." unique_id=944508092]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

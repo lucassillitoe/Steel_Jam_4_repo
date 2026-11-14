@@ -2,7 +2,7 @@ extends Node
 
 #The current state of input
 enum state {INPUTTING, PLAYING_BACK}
-var currentState := state.INPUTTING
+@onready var currentState := state.INPUTTING
 
 #All the available inputs
 enum inputs {JUMP, LEFT, RIGHT}
@@ -16,8 +16,9 @@ var playbackIndex = 0
 #Reference to the player
 @onready var player =  $"../Player"
 
+
 #calls every frame
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if currentState == state.INPUTTING:
 		#reads keyboard input and appends to the array
 		
@@ -46,7 +47,8 @@ func _process(delta: float) -> void:
 	if currentState == state.PLAYING_BACK:
 		#check is array contains elements
 		if not inputContainer.is_empty():
-			#print("Playing back", playbackIndex, "/", len(inputContainer))
+			print("Playing back", playbackIndex, "/", len(inputContainer))
+	
 			
 			#Executes the input
 			var inputsThisTick = inputContainer[playbackIndex]
@@ -63,10 +65,17 @@ func _process(delta: float) -> void:
 			player.MoveHorizontal(horizontalInputSum, delta)
 			
 			
-			#When it reaches the end
-			if playbackIndex >= len(inputContainer):
+			#Skips ahead if stationary to avoid waiting
+			if player.playerVelocity == Vector2(0, 0):
+				while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
+					playbackIndex += 1
+			
+			
+			#When it reaches the end of the current sequence
+			if playbackIndex >= len(inputContainer) - 1:
 				currentState = state.INPUTTING
 				inputContainer.clear()
+			
 			
 			#Increments the current step
 			playbackIndex += 1

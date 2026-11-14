@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0hfb7pye7juf" path="res://Scenes/level_1.tscn" id="2_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://b5txh8gsi65ks" path="res://Scenes/level_2.tscn" id="3_5ukr8"]
 [ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://ufwv365gldxh" path="res://Scenes/Camera.tscn" id="6_o06y3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07qy"]
 size = Vector2(1167, 129)
@@ -27,6 +28,9 @@ position = Vector2(4.5, -1.5)
 shape = SubResource("RectangleShape2D_t07qy")
 
 [node name="Player" parent="." unique_id=1786778758 instance=ExtResource("2_5a7ea")]
+position = Vector2(466, 443)
+
+[node name="Camera" parent="." unique_id=640432073 instance=ExtResource("6_o06y3")]
 
 [node name="Player input" type="Node" parent="." unique_id=1558028905]
 script = ExtResource("6_5ukr8")
