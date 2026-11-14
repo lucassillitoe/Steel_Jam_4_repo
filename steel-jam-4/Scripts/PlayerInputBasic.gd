@@ -11,7 +11,6 @@ enum state {INPUTTING, PLAYING_BACK}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	GLOBAL_VARIABLES.PlayerPosition = player.position
 	var direction := Input.get_axis("Left", "Right")
 	
 	player.MoveHorizontal(direction, delta)

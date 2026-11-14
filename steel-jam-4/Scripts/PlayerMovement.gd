@@ -33,6 +33,7 @@ func Jump() -> void:
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
 
+
 func CheckIfDied() -> bool:
 	## (check for layer 2 to kill player)
 	## Checks if the player is touching layer 2 
@@ -52,6 +53,9 @@ func _physics_process(delta: float) -> void:
 	
 	#Adds a reference for velocity for other scripts
 	playerVelocity = velocity
+	
+	#Adds a reference for position
+	GLOBAL_VARIABLES.PlayerPosition = self.position
 	
 	move_and_slide()
 	
