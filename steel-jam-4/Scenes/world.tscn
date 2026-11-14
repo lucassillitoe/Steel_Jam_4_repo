@@ -9,9 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07qy"]
 size = Vector2(1167, 129)
 
-[node name="World" type="Node2D" unique_id=555161220]
+[node name="World" type="Node2D" unique_id=555161220 node_paths=PackedStringArray("Player")]
 script = ExtResource("1_45d1s")
 RoomsArray = Array[PackedScene]([ExtResource("2_y7y61"), ExtResource("3_q2d71")])
+Player = NodePath("Player")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=315756783]
 position = Vector2(566, 655.00006)
