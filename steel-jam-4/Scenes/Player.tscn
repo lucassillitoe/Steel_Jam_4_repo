@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://8n0qk2i80rta"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://uuhsu0xhuyso" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
+=======
+[ext_resource type="Script" uid="uid://dw7wlgpjlxj1w" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]

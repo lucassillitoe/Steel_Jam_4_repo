@@ -2,9 +2,15 @@ extends CharacterBody2D
 
 
 const SPEED = 500.0
+<<<<<<< Updated upstream
 const ACCLERATION = 5000.0
 const GROUND_DECLERATION = 3000.0
 const AIR_DECLERATION = 500.0
+=======
+const ACCLERATION = 100.0
+const GROUND_DECLERATION = 30.0
+const AIR_DECLERATION = 5.0
+>>>>>>> Stashed changes
 const JUMP_VELOCITY = 500.0
 
 
