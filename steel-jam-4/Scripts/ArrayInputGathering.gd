@@ -20,6 +20,10 @@ var playbackIndex = 0
 #calls every frame
 func _physics_process(delta: float) -> void:
 	if currentState == state.INPUTTING:
+		#Stops the player from moving
+		player.MoveHorizontal(0, delta)
+		
+		
 		#reads keyboard input and appends to the array
 		
 		#Movement input for this frame
@@ -38,6 +42,7 @@ func _physics_process(delta: float) -> void:
 		#Finish movement sequence and play it
 		if Input.is_action_just_pressed("Enter playback"):
 			currentState = state.PLAYING_BACK
+			print(inputContainer)
 			playbackIndex = 0
 		
 		#print(inputContainer)
@@ -45,9 +50,9 @@ func _physics_process(delta: float) -> void:
 	
 	#When playing back inputs
 	if currentState == state.PLAYING_BACK and not inputContainer.is_empty():
-		print("Playing back ", playbackIndex, "/", len(inputContainer))
-	
-			
+		print("Playing back ", playbackIndex, "/", len(inputContainer) - 1)
+		
+		
 		#Executes the input
 		var inputsThisTick = inputContainer[playbackIndex]
 			
@@ -65,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			
 		#Skips ahead if stationary to avoid waiting
 		if player.playerVelocity == Vector2(0, 0):
-			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 1:
+			while inputContainer[playbackIndex + 1] == [] and playbackIndex < len(inputContainer) - 2:
 				playbackIndex += 1
 			
 			
@@ -73,10 +78,7 @@ func _physics_process(delta: float) -> void:
 		if playbackIndex >= len(inputContainer) - 1:
 			currentState = state.INPUTTING
 			inputContainer.clear()
-				
-			#Stops the player from moving
-			player.MoveHorizontal(0, delta)
 			
 			
-			#Increments the current step
+		#Increments the current step
 		playbackIndex += 1
