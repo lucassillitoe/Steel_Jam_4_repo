@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	
 	#When playing back inputs
 	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.PLAYING_BACK and not inputContainer.is_empty():
-		print("Playing back ", playbackIndex, "/", len(inputContainer) - 1)
+		print("Playing back ", playbackIndex + 1, "/", len(inputContainer))
 		
 		
 		#Executes the input
@@ -62,19 +62,19 @@ func _physics_process(delta: float) -> void:
 			horizontalInputSum += 1
 			
 		player.MoveHorizontal(horizontalInputSum, delta)
-			
+		
+		
+		#Increments the current step
+		playbackIndex += 1
+		
 			
 		#Skips ahead if stationary to avoid waiting
 		if player.playerVelocity == Vector2(0, 0):
-			while inputContainer[playbackIndex + 1] == [] and playbackIndex < len(inputContainer) - 2:
+			while inputContainer[playbackIndex] == [] and playbackIndex < len(inputContainer) - 2:
 				playbackIndex += 1
 			
 			
 		#When it reaches the end of the current sequence
-		if playbackIndex >= len(inputContainer) - 1:
+		if playbackIndex > len(inputContainer) - 1:
 			GLOBAL_VARIABLES.currentState = GLOBAL_VARIABLES.state.INPUTTING
 			inputContainer.clear()
-			
-			
-		#Increments the current step
-		playbackIndex += 1

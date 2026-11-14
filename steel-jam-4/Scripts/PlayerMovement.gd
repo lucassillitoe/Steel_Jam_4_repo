@@ -23,12 +23,15 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, GROUND_DECLERATION * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, AIR_DECLERATION * delta)
+	
+	playerVelocity = velocity
 
 
 func Jump() -> void:
 	##Updates velocity for horizontal movement
 	if is_on_floor():
 		velocity.y = -JUMP_VELOCITY
+		playerVelocity = velocity
 
 
 func _physics_process(delta: float) -> void:
