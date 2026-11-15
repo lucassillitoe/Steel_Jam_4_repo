@@ -31,6 +31,14 @@ shape = SubResource("RectangleShape2D_t07qy")
 
 [node name="Player" parent="." unique_id=1786778758 instance=ExtResource("5_kn06e")]
 
-[node name="Camera" parent="." unique_id=640432073 instance=ExtResource("6_5ukr8")]
+[node name="Camera" parent="." unique_id=640432073 node_paths=PackedStringArray("World") instance=ExtResource("6_5ukr8")]
+World = NodePath("..")
 
-[node name="Scorer" parent="." unique_id=1553671718 instance=ExtResource("7_o06y3")]
+[node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("scoreDisplay") instance=ExtResource("7_o06y3")]
+scoreDisplay = NodePath("../Camera/UI/Score")
+
+[node name="Position" type="Marker2D" parent="." unique_id=1752809169]
+position = Vector2(0, -64)
+
+[editable path="Player"]
+[editable path="Camera"]
