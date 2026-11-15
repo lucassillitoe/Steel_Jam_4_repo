@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://depcrptedr4e8"]
 
 [ext_resource type="Script" uid="uid://cxg247wgjm5k6" path="res://Scripts/Scorer.gd" id="1_qbqup"]
+[ext_resource type="Texture2D" uid="uid://bukipqhvhueaj" path="res://Assets/New Project.png" id="2_uh5k2"]
 
 [node name="Scorer" type="Node2D" unique_id=1553671718]
 script = ExtResource("1_qbqup")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=920667146]
+<<<<<<< HEAD
+=======
+visible = false
+z_index = 1
+>>>>>>> c9531d3e58ed2da2335bdefa009bdf72ba9b8db6
 offset_left = -8.0
 offset_top = -360.0
 offset_right = 8.0
 offset_bottom = 360.0
 color = Color(1, 0, 0, 0.39607844)
+
+[node name="NewProject" type="Sprite2D" parent="." unique_id=195478579]
+scale = Vector2(5, 5)
+texture = ExtResource("2_uh5k2")
