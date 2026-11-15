@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	
 	#When playing back inputs
 	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.PLAYING_BACK and not inputContainer.is_empty():
-		print("Playing back ", playbackIndex + 1, "/", len(inputContainer))
+		#print("Playing back ", playbackIndex + 1, "/", len(inputContainer))
 		
 		
 		#Executes the input
