@@ -43,6 +43,7 @@ func Jump() -> void:
 		$JumpSound.play()
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
+		
 
 
 func Dash() -> void:
@@ -84,7 +85,7 @@ func _physics_process(delta: float) -> void:
 	
 	# check if the player is touching layer 2 to kill him
 	if CheckIfDied():
-		#print('gg')
+		$"../Camera/Death Screen".show()
 		pass
 
 

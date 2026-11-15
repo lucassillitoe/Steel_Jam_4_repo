@@ -14,6 +14,9 @@ var settings := {
 		"Jump": "Space",
 		"Menu": "Escape",
 		"Playback": "Enter",
+	},
+	"GameStates": {
+		"Highscore": 0
 	}
 }
 

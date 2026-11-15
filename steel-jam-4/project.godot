@@ -31,6 +31,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Steel_jam_4"
 
+[global_group]
+
+ScoreCard=""
+
 [input]
 
 Left={

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnia5gu0fed4o"]
 
 [ext_resource type="FontFile" uid="uid://dwrhd47e71uvn" path="res://Assets/PixelPurl.ttf" id="1_rwas2"]
+[ext_resource type="Script" uid="uid://ctw8asyn6icbx" path="res://Scenes/death_screen.gd" id="1_tseak"]
 [ext_resource type="Texture2D" uid="uid://w42fookjjdli" path="res://Assets/Button Light.png" id="2_tseak"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mmixe"]
@@ -21,7 +22,6 @@ font_size = 74
 font_color = Color(0.10047465, 0.11751335, 0.1252059, 1)
 
 [node name="Death Screen" type="Control" unique_id=582097814]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +30,7 @@ offset_left = 0.305
 offset_right = 0.3050537
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tseak")
 
 [node name="Label" type="Label" parent="." unique_id=1609311490]
 layout_mode = 1
@@ -97,8 +98,10 @@ size_flags_vertical = 1
 text = "9999999999999999"
 label_settings = SubResource("LabelSettings_tmtgh")
 vertical_alignment = 1
+metadata/Catagory = "GameStates"
+metadata/Key = "Highscore"
 
-[node name="Highscore" type="Label" parent="." unique_id=295278281]
+[node name="Highscore" type="Label" parent="." unique_id=295278281 groups=["ScoreCard"]]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -110,9 +113,11 @@ offset_bottom = 384.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-text = "9999999999999999"
+text = "0"
 label_settings = SubResource("LabelSettings_tmtgh")
 vertical_alignment = 1
+metadata/Catagory = "GameStates"
+metadata/Key = "Highscore"
 
 [node name="Play again" type="TextureButton" parent="." unique_id=683179661]
 layout_mode = 1
