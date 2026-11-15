@@ -187,6 +187,50 @@ position = Vector2(0, -140)
 World = NodePath("..")
 
 [node name="Death Screen" parent="Camera" unique_id=582097814 instance=ExtResource("7_k7acu")]
+visible = false
+z_index = 1
+
+[node name="Label" parent="Camera/Death Screen" index="0" unique_id=1609311490]
+offset_left = -482.30502
+offset_top = -264.0
+offset_right = 484.69498
+offset_bottom = -145.0
+
+[node name="Score label" parent="Camera/Death Screen" index="1" unique_id=1418532170]
+offset_left = -260.30502
+offset_top = -128.0
+offset_right = -76.30502
+offset_bottom = -64.0
+
+[node name="Highscore label" parent="Camera/Death Screen" index="2" unique_id=679416496]
+offset_left = -260.30502
+offset_top = -64.0
+offset_right = -76.30502
+offset_bottom = 0.0
+
+[node name="Score" parent="Camera/Death Screen" index="3" unique_id=1909685029]
+offset_left = -60.305023
+offset_top = -128.0
+offset_right = 571.69507
+offset_bottom = -64.0
+
+[node name="Highscore" parent="Camera/Death Screen" index="4" unique_id=295278281]
+offset_left = -60.305023
+offset_top = -64.0
+offset_right = 571.69507
+offset_bottom = 0.0
+
+[node name="Play again" parent="Camera/Death Screen" index="5" unique_id=683179661]
+offset_left = -455.30502
+offset_top = 4.0
+offset_right = -63.30502
+offset_bottom = 132.0
+
+[node name="Menu" parent="Camera/Death Screen" index="6" unique_id=1051107045]
+offset_left = 64.69498
+offset_top = 4.0
+offset_right = 448.69504
+offset_bottom = 132.0
 
 [node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("scoreDisplay") instance=ExtResource("7_o06y3")]
 scoreDisplay = NodePath("../Camera/UI/Score")
@@ -195,3 +239,4 @@ scoreDisplay = NodePath("../Camera/UI/Score")
 
 [editable path="TileMapSetUp"]
 [editable path="Camera"]
+[editable path="Camera/Death Screen"]
