@@ -16,6 +16,11 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	##Takes in inputAxis: a float between -1 and 1 and delta: the physics tick
 	##and updates velocity for horizontal movement
 	
+	if inputAxis == -1:
+		$AnimatedSprite2D.flip_h = true
+	elif inputAxis == 1:
+		$AnimatedSprite2D.flip_h = false
+	
 	if inputAxis:
 		var targetSpeed := inputAxis * SPEED
 		$AnimatedSprite2D.play("Walk")
@@ -68,3 +73,10 @@ func _physics_process(delta: float) -> void:
 	if CheckIfDied():
 		#print('gg')
 		pass
+
+
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	if $AnimatedSprite2D.animation == "Walk":
+		$WalkSound.play()

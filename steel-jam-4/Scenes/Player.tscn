@@ -140,3 +140,5 @@ stream = ExtResource("4_nn08x")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=2054352319]
 stream = ExtResource("5_52ee3")
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
