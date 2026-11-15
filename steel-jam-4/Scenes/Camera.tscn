@@ -14,6 +14,7 @@ script = ExtResource("1_tsbx5")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=500033909]
 
 [node name="UI" type="Control" parent="." unique_id=944508092]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
