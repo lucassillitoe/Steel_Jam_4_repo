@@ -225,13 +225,7 @@ offset_top = 177.0
 offset_right = 631.00006
 offset_bottom = 241.0
 
-[node name="Play again" parent="Camera/UI/Death Screen" index="5" unique_id=683179661]
-offset_left = -474.00003
-offset_top = 273.0
-offset_right = -82.00003
-offset_bottom = 401.0
-
-[node name="Menu" parent="Camera/UI/Death Screen" index="6" unique_id=1051107045]
+[node name="Menu" parent="Camera/UI/Death Screen" index="5" unique_id=1051107045]
 offset_left = 45.999973
 offset_top = 273.0
 offset_right = 430.00003
@@ -242,7 +236,6 @@ scoreDisplay = NodePath("../Camera/UI/Score")
 
 [node name="Position" type="Marker2D" parent="." unique_id=1337215596]
 
-[connection signal="pressed" from="Camera/UI/Death Screen/Play again" to="Camera/UI/Death Screen" method="_on_play_again_pressed"]
 [connection signal="pressed" from="Camera/UI/Death Screen/Menu" to="Camera/UI/Death Screen" method="_on_menu_pressed"]
 
 [editable path="TileMapSetUp"]
