@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://8n0qk2i80rta"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://dlhl8lkskauh3" path="res://Assets/otto_run.png" id="2_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://gjo1e5bwewej" path="res://Assets/otto_idle.png" id="2_bhhdu"]
-[ext_resource type="Texture2D" uid="uid://cxhq5l5pro6ks" path="res://Assets/otto_neutral.png" id="3_megsn"]
+[ext_resource type="Texture2D" uid="uid://bk8ms0fwjjd0w" path="res://Assets/otto_run.png" id="2_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://dst7t8ycq5sxn" path="res://Assets/otto_idle.png" id="2_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://dtk5uhgssq4fo" path="res://Assets/otto_neutral.png" id="3_megsn"]
 [ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="4_5ixxa"]
-[ext_resource type="AudioStream" uid="uid://bgg0wcvonbpxb" path="res://Assets/Walk.wav" id="4_nn08x"]
-[ext_resource type="Texture2D" uid="uid://djx3b3gvvv7ks" path="res://Assets/otto_jump.png" id="4_yoq75"]
-[ext_resource type="AudioStream" uid="uid://0rdpr7q55lye" path="res://Assets/Jump.wav" id="5_52ee3"]
-[ext_resource type="Texture2D" uid="uid://oxfxs8o8meue" path="res://Assets/flying_fist.png" id="9_megsn"]
+[ext_resource type="AudioStream" uid="uid://c68uxgwhshcsa" path="res://Assets/Walk.wav" id="4_nn08x"]
+[ext_resource type="Texture2D" uid="uid://dq15dm10v1fbi" path="res://Assets/otto_jump.png" id="4_yoq75"]
+[ext_resource type="AudioStream" uid="uid://ebqwhpt6hq58" path="res://Assets/Jump.wav" id="5_52ee3"]
+[ext_resource type="Texture2D" uid="uid://c3bav027fx2rn" path="res://Assets/flying_fist.png" id="9_megsn"]
 
 [sub_resource type="Gradient" id="Gradient_megsn"]
 offsets = PackedFloat32Array(0.5718954, 1)
