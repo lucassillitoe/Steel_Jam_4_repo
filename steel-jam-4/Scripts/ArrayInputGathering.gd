@@ -1,7 +1,7 @@
 extends Node
 
 #All the available inputs
-enum inputs {JUMP, LEFT, RIGHT}
+enum inputs {JUMP, LEFT, RIGHT, DASH}
 
 #variable for the list of inputs 
 var inputContainer = []
@@ -25,12 +25,14 @@ func _physics_process(delta: float) -> void:
 		#Movement input for this frame
 		var inputsThisFrame = []
 		
-		if Input.is_action_just_pressed("Jump"):
+		if Input.is_action_pressed("Jump"):
 			inputsThisFrame.append(inputs.JUMP)
 		if Input.is_action_pressed("Left"):
 			inputsThisFrame.append(inputs.LEFT)
 		if Input.is_action_pressed("Right"):
 			inputsThisFrame.append(inputs.RIGHT)
+		if Input.is_action_just_pressed("Dash"):
+			inputsThisFrame.append(inputs.DASH)
 			
 		inputContainer.append(inputsThisFrame)
 		
@@ -41,6 +43,10 @@ func _physics_process(delta: float) -> void:
 			print(inputContainer)
 			playbackIndex = 0
 		
+		#Cancels the current movement squence
+		if Input.is_action_just_pressed("CancelInputs"):
+			inputContainer.clear()
+		
 		#print(inputContainer)
 	
 	
@@ -48,12 +54,14 @@ func _physics_process(delta: float) -> void:
 	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.PLAYING_BACK and not inputContainer.is_empty():
 		#print("Playing back ", playbackIndex + 1, "/", len(inputContainer))
 		
-		
 		#Executes the input
 		var inputsThisTick = inputContainer[playbackIndex]
 			
 		if inputs.JUMP in inputsThisTick:
 			player.Jump()
+		
+		if inputs.DASH in inputsThisTick:
+			player.Dash()
 			
 		var horizontalInputSum := 0
 		if inputs.LEFT in inputsThisTick:
