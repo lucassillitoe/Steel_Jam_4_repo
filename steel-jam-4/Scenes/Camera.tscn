@@ -12,7 +12,6 @@ font_size = 50
 script = ExtResource("1_tsbx5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=500033909]
-zoom = Vector2(0.1, 0.1)
 
 [node name="UI" type="Control" parent="." unique_id=944508092]
 layout_mode = 3

@@ -20,7 +20,7 @@ func Reposition():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.y = 0
+	position.y = -140
 	
 	if GLOBAL_VARIABLES.currentState == GLOBAL_VARIABLES.state.INPUTTING:
 		if Input.is_action_just_pressed("MoveCameraRight"):
