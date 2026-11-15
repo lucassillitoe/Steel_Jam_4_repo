@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dq15dm10v1fbi" path="res://Assets/otto_jump.png" id="4_yoq75"]
 [ext_resource type="AudioStream" uid="uid://ebqwhpt6hq58" path="res://Assets/Jump.wav" id="5_52ee3"]
 [ext_resource type="Texture2D" uid="uid://c3bav027fx2rn" path="res://Assets/flying_fist.png" id="9_megsn"]
-[ext_resource type="PackedScene" uid="uid://bnia5gu0fed4o" path="res://Scenes/death_screen.tscn" id="10_yoq75"]
 
 [sub_resource type="Gradient" id="Gradient_megsn"]
 offsets = PackedFloat32Array(0.5718954, 1)
@@ -178,9 +177,5 @@ stream = ExtResource("4_nn08x")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=2054352319]
 stream = ExtResource("5_52ee3")
-
-[node name="Death Screen" parent="." unique_id=582097814 instance=ExtResource("10_yoq75")]
-offset_left = 1.3050001
-offset_right = 1.3050537
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
