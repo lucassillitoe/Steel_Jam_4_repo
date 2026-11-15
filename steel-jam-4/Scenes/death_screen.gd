@@ -13,7 +13,7 @@ func _on_visibility_changed() -> void:
 		_refresh()
 
 func _refresh() -> void:
-	var current_score := 
+	var current_score := GLOBAL_VARIABLES.Score
 	var highscore := int(SettingsManager.get_setting("GameStates", "Highscore"))
 	deathScore.text = score_label.text
 	
