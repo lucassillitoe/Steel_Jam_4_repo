@@ -86,8 +86,8 @@ func _physics_process(delta: float) -> void:
 	
 	# check if the player is touching layer 2 to kill him
 	if CheckIfDied():
-		deathScreen.visible = true
-		playbackOverlay.visible = true
+		$"../Camera/UI/Death Screen".visible = true
+		GLOBAL_VARIABLES.currentState = GLOBAL_VARIABLES.state.DEATH
 
 
 

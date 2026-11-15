@@ -188,7 +188,7 @@ playbackOverlay = NodePath("../Camera/UI/Playback overlay")
 position = Vector2(0, -140)
 World = NodePath("..")
 
-[node name="Death Screen" parent="Camera/UI" parent_id_path=PackedInt32Array(640432073, 944508092) index="2" unique_id=582097814 node_paths=PackedStringArray("score_label") instance=ExtResource("7_k7acu")]
+[node name="Death Screen" parent="Camera/UI" parent_id_path=PackedInt32Array(640432073, 944508092) index="2" unique_id=582097814 instance=ExtResource("7_k7acu")]
 visible = false
 layout_mode = 1
 offset_left = 8.0
@@ -244,6 +244,9 @@ offset_bottom = 401.0
 scoreDisplay = NodePath("../Camera/UI/Score")
 
 [node name="Position" type="Marker2D" parent="." unique_id=1337215596]
+
+[connection signal="pressed" from="Camera/UI/Death Screen/Play again" to="Camera/UI/Death Screen" method="_on_play_again_pressed"]
+[connection signal="pressed" from="Camera/UI/Death Screen/Menu" to="Camera/UI/Death Screen" method="_on_menu_pressed"]
 
 [editable path="TileMapSetUp"]
 [editable path="Camera"]
