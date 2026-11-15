@@ -17,10 +17,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxr5p"]
-size = Vector2(131, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gntrk"]
+radius = 64.5
 
 [node name="Player" type="CharacterBody2D" unique_id=1786778758]
+scale = Vector2(0.4, 0.4)
 collision_mask = 3
 script = ExtResource("1_kpjcp")
 metadata/_edit_group_ = true
@@ -31,7 +32,7 @@ sprite_frames = SubResource("SpriteFrames_e80uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669063506]
 position = Vector2(-0.5, -64)
-shape = SubResource("RectangleShape2D_cxr5p")
+shape = SubResource("CircleShape2D_gntrk")
 
 [node name="Player input" type="Node" parent="." unique_id=965260646 node_paths=PackedStringArray("player")]
 script = ExtResource("4_5ixxa")
