@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bstjl6eg77tw5" path="res://Assets/Icons/icon.svg" id="2_kne1u"]
 [ext_resource type="Script" uid="uid://d0dc3jpk27em8" path="res://Scripts/ArrayInputGathering.gd" id="4_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://bgg0wcvonbpxb" path="res://Assets/Walk.wav" id="4_nn08x"]
+[ext_resource type="AudioStream" uid="uid://0rdpr7q55lye" path="res://Assets/Jump.wav" id="5_52ee3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -34,3 +36,9 @@ shape = SubResource("RectangleShape2D_cxr5p")
 [node name="Player input" type="Node" parent="." unique_id=965260646 node_paths=PackedStringArray("player")]
 script = ExtResource("4_5ixxa")
 player = NodePath("..")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=236277750]
+stream = ExtResource("4_nn08x")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=2054352319]
+stream = ExtResource("5_52ee3")
