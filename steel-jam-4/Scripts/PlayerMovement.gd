@@ -18,6 +18,7 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	
 	if inputAxis:
 		var targetSpeed := inputAxis * SPEED
+		
 		velocity.x = move_toward(velocity.x, targetSpeed, ACCLERATION * delta)
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, GROUND_DECLERATION * delta)
@@ -30,6 +31,7 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 func Jump() -> void:
 	##Updates velocity for horizontal movement
 	if is_on_floor():
+		$JumpSound.play()
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
 

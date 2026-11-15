@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d0saqfhbbb3m8" path="res://Assets/Button.png" id="5_y4yjw"]
 [ext_resource type="Texture2D" uid="uid://rnjm1n0vk6jd" path="res://Assets/Ball Slider.png" id="6_waa4j"]
 [ext_resource type="Texture2D" uid="uid://xa3sgc4f5snf" path="res://Assets/SliderBody.png" id="7_ok7cu"]
+[ext_resource type="AudioStream" uid="uid://bpuk4ot7tih4x" path="res://Assets/Play.wav" id="8_mmixe"]
+[ext_resource type="AudioStream" uid="uid://cg3mh2vraw2ce" path="res://Assets/Select.wav" id="9_nt8jn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmtgh"]
 font = ExtResource("3_27fn8")
@@ -589,6 +591,14 @@ text = "Reset"
 label_settings = SubResource("LabelSettings_irxef")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ToggleSound1" type="AudioStreamPlayer" parent="." unique_id=848067295]
+stream = ExtResource("8_mmixe")
+volume_db = -4.761
+
+[node name="ToggleSound2" type="AudioStreamPlayer" parent="." unique_id=129428495]
+stream = ExtResource("9_nt8jn")
+volume_db = -11.838
 
 [connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Play" to="." method="_on_play_pressed"]
