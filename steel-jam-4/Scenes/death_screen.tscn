@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnia5gu0fed4o"]
 
 [ext_resource type="FontFile" uid="uid://dwrhd47e71uvn" path="res://Assets/PixelPurl.ttf" id="1_rwas2"]
-[ext_resource type="Script" uid="uid://ctw8asyn6icbx" path="res://Scenes/death_screen.gd" id="1_tseak"]
+[ext_resource type="Script" uid="uid://ctw8asyn6icbx" path="res://Scripts/death_screen.gd" id="1_tseak"]
 [ext_resource type="Texture2D" uid="uid://w42fookjjdli" path="res://Assets/Button Light.png" id="2_tseak"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mmixe"]
