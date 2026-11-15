@@ -33,4 +33,7 @@ shape = SubResource("RectangleShape2D_t07qy")
 
 [node name="Camera" parent="." unique_id=640432073 instance=ExtResource("6_5ukr8")]
 
-[node name="Scorer" parent="." unique_id=1553671718 instance=ExtResource("7_o06y3")]
+[node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("scoreDisplay") instance=ExtResource("7_o06y3")]
+scoreDisplay = NodePath("../Camera/UI/Score")
+
+[editable path="Camera"]
