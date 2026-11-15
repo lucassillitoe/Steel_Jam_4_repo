@@ -58,7 +58,6 @@ grow_vertical = 2
 script = ExtResource("1_waa4j")
 
 [node name="Main Menu" type="Control" parent="." unique_id=1228653895]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,6 +172,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Death Screen" type="Control" parent="." unique_id=1676002641]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
