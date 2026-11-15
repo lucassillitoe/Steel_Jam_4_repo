@@ -10,7 +10,8 @@ const JUMP_VELOCITY = 500.0
 const DASH_VELOCITY = 1250.0
 
 @onready var playerVelocity := velocity
-
+@export var deathScreen : Node
+@export var playbackOverlay : Node
 
 func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	##Takes in inputAxis: a float between -1 and 1 and delta: the physics tick
