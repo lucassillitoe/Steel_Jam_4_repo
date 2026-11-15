@@ -34,6 +34,7 @@ func _start_listening(button: BaseButton, Action: String) -> void:
 	_listening_button = button
 	_listening_action = Action
 	button.get_child(0).text = "[Press a key.]"
+	$ToggleSound2.play()
 	_just_started_listening = true
 
 
@@ -73,11 +74,13 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
+	$ToggleSound1.play()
 	get_tree().change_scene_to_file("res://Scenes/world.tscn")
 
 
 func _on_settings_pressed() -> void:
 	$"Main Menu".hide()
+	$ToggleSound1.play()
 	$Settings.show()
 
 
@@ -88,8 +91,10 @@ func _on_quit_pressed() -> void:
 func _on_audio_button_pressed() -> void:
 	$Settings/Audio.show()
 	$Settings/Keybinds.hide()
+	$ToggleSound2.play()
 
 
 func _on_keybinds_button_pressed() -> void:
 	$Settings/Audio.hide()
 	$Settings/Keybinds.show()
+	$ToggleSound2.play()

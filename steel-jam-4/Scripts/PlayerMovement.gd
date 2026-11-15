@@ -18,6 +18,7 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	
 	if inputAxis:
 		var targetSpeed := inputAxis * SPEED
+		$AnimatedSprite2D.play("Walk")
 		velocity.x = move_toward(velocity.x, targetSpeed, ACCLERATION * delta)
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, GROUND_DECLERATION * delta)
@@ -30,6 +31,8 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 func Jump() -> void:
 	##Updates velocity for horizontal movement
 	if is_on_floor():
+		$JumpSound.play()
+		$AnimatedSprite2D.play("Jump")
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
 
@@ -50,6 +53,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	if velocity.x <= 0.5 and velocity.y <= 0.5 and velocity.y >= -0.5: 
+		$AnimatedSprite2D.play("Idle")
 	
 	#Adds a reference for velocity for other scripts
 	playerVelocity = velocity
