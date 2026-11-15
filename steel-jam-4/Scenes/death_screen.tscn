@@ -22,6 +22,7 @@ font_size = 74
 font_color = Color(0.10047465, 0.11751335, 0.1252059, 1)
 
 [node name="Death Screen" type="Control" unique_id=582097814]
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

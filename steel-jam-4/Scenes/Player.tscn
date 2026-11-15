@@ -157,7 +157,7 @@ explosiveness = 0.07
 process_material = SubResource("ParticleProcessMaterial_tmtgh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=499872268]
-z_index = 1
+z_index = 2
 position = Vector2(0, -64)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_e80uo")

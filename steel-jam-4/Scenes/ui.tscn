@@ -156,13 +156,10 @@ position = Vector2(632.4444, 345.75003)
 scale = Vector2(2.4222562, 2.4222562)
 texture = ExtResource("2_g0wmg")
 
-[node name="Dust Particle" type="Node2D" parent="." unique_id=1162087534]
-position = Vector2(624, 334)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1189253318]
+position = Vector2(632, 74)
 scale = Vector2(2.4222562, 2.4222562)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Dust Particle" unique_id=1189253318]
-position = Vector2(-81, -360)
-amount = 14
+amount = 60
 amount_ratio = 0.9066
 texture = ExtResource("3_4vbiv")
 lifetime = 2.7299999999999995
