@@ -9,6 +9,7 @@ var _listening_action := ""
 var _just_started_listening := false
 
 func _ready() -> void:
+	$AnimationPlayer.play("Title")
 	_pending = SettingsManager.settings.duplicate(true)
 	_load_values_into_ui()
 	save_button.pressed.connect(_on_save)

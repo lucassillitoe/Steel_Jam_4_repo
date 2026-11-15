@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://deo1xdctljyq6" path="res://Scripts/ui.gd" id="1_waa4j"]
 [ext_resource type="Texture2D" uid="uid://w42fookjjdli" path="res://Assets/Button Light.png" id="2_27fn8"]
+[ext_resource type="Texture2D" uid="uid://dlgo7tw04q7vt" path="res://Assets/image_2026-11-15_124452800.png" id="2_g0wmg"]
+[ext_resource type="Texture2D" uid="uid://c3bav027fx2rn" path="res://Assets/flying_fist.png" id="3_4vbiv"]
 [ext_resource type="FontFile" uid="uid://dwrhd47e71uvn" path="res://Assets/PixelPurl.ttf" id="3_27fn8"]
 [ext_resource type="Texture2D" uid="uid://tta7wasolwx1" path="res://Assets/Menu.png" id="4_nltto"]
 [ext_resource type="Texture2D" uid="uid://vncqpmxmptdy" path="res://Assets/Button.png" id="5_y4yjw"]
@@ -10,9 +12,21 @@
 [ext_resource type="AudioStream" uid="uid://dsx0wmlk815d7" path="res://Assets/Play.wav" id="8_mmixe"]
 [ext_resource type="AudioStream" uid="uid://btx38s3kdrkey" path="res://Assets/Select.wav" id="9_nt8jn"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3r70p"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1280.0
+inherit_velocity_ratio = 0.137
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 444.97998
+gravity = Vector3(0, 98, 0)
+scale_max = 2.0
+scale_over_velocity_max = 184.55
+color = Color(1, 1, 1, 0.34117648)
+
 [sub_resource type="LabelSettings" id="LabelSettings_tmtgh"]
 font = ExtResource("3_27fn8")
-font_size = 50
+font_size = 235
 outline_size = 45
 outline_color = Color(0, 0, 0, 1)
 
@@ -42,6 +56,92 @@ texture = ExtResource("7_ok7cu")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_waa4j"]
 texture = ExtResource("7_ok7cu")
 
+[sub_resource type="Animation" id="Animation_mmixe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(133.5, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main Menu/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main Menu/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nt8jn"]
+resource_name = "Title"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu/Label:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 3.7666667, 7.5666666, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(133.5, 120), Vector2(131.695, 86), Vector2(132.695, 103), Vector2(133.5, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main Menu/Label:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.03333334, 1.4666667, 5.5, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.066880964, 0.10606351, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main Menu/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 6.3333335, 10.033334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0wmg"]
+_data = {
+&"RESET": SubResource("Animation_mmixe"),
+&"Title": SubResource("Animation_nt8jn")
+}
+
 [node name="UI" type="Control" unique_id=458499370]
 layout_mode = 3
 anchors_preset = 15
@@ -50,6 +150,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_waa4j")
+
+[node name="Image20261115124452800" type="Sprite2D" parent="." unique_id=1487082124]
+position = Vector2(632.4444, 345.75003)
+scale = Vector2(2.4222562, 2.4222562)
+texture = ExtResource("2_g0wmg")
+
+[node name="Dust Particle" type="Node2D" parent="." unique_id=1162087534]
+position = Vector2(624, 334)
+scale = Vector2(2.4222562, 2.4222562)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Dust Particle" unique_id=1189253318]
+position = Vector2(-81, -360)
+amount = 14
+amount_ratio = 0.9066
+texture = ExtResource("3_4vbiv")
+lifetime = 2.7299999999999995
+explosiveness = 0.05
+randomness = 0.74
+process_material = SubResource("ParticleProcessMaterial_3r70p")
 
 [node name="Main Menu" type="Control" parent="." unique_id=1228653895]
 layout_mode = 1
@@ -66,17 +185,18 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -483.5
+offset_left = -506.5
 offset_top = 120.0
-offset_right = 483.5
-offset_bottom = 239.0
+offset_right = 506.5127
+offset_bottom = 326.00366
 grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.505)
 size_flags_horizontal = 4
 size_flags_vertical = 1
 text = "Chain Runner"
 label_settings = SubResource("LabelSettings_tmtgh")
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Settings" type="TextureButton" parent="Main Menu" unique_id=780992871]
 layout_mode = 1
@@ -599,6 +719,9 @@ volume_db = -4.761
 [node name="ToggleSound2" type="AudioStreamPlayer" parent="." unique_id=129428495]
 stream = ExtResource("9_nt8jn")
 volume_db = -11.838
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1100238323]
+libraries/ = SubResource("AnimationLibrary_g0wmg")
 
 [connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Play" to="." method="_on_play_pressed"]
