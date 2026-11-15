@@ -7,6 +7,7 @@ const GROUND_DECLERATION = 3000.0
 const AIR_DECLERATION = 500.0
 
 const JUMP_VELOCITY = 500.0
+const DASH_VELOCITY = 1250.0
 
 @onready var playerVelocity := velocity
 
@@ -37,11 +38,21 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 
 
 func Jump() -> void:
-	##Updates velocity for horizontal movement
+	##Updates velocity for jump
 	if is_on_floor():
 		$JumpSound.play()
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
+
+
+func Dash() -> void:
+	##Updates velocity for horizontal movement
+	$JumpSound.play()
+	$AnimatedSprite2D.play("Jump")
+	
+	var movementDirection = sign(velocity.x)
+	velocity.x = movementDirection * DASH_VELOCITY
+	playerVelocity = velocity
 
 
 func CheckIfDied() -> bool:

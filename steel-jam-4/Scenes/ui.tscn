@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://g10mf0eu444k"]
 
 [ext_resource type="Script" uid="uid://deo1xdctljyq6" path="res://Scripts/ui.gd" id="1_waa4j"]
-[ext_resource type="Texture2D" uid="uid://d0vwtd0a7qg0f" path="res://Assets/Button Light.png" id="2_27fn8"]
-[ext_resource type="FontFile" uid="uid://bc48fedfock2y" path="res://Assets/PixelPurl.ttf" id="3_27fn8"]
-[ext_resource type="Texture2D" uid="uid://dych78034ov0q" path="res://Assets/Menu.png" id="4_nltto"]
-[ext_resource type="Texture2D" uid="uid://d0saqfhbbb3m8" path="res://Assets/Button.png" id="5_y4yjw"]
-[ext_resource type="Texture2D" uid="uid://rnjm1n0vk6jd" path="res://Assets/Ball Slider.png" id="6_waa4j"]
-[ext_resource type="Texture2D" uid="uid://xa3sgc4f5snf" path="res://Assets/SliderBody.png" id="7_ok7cu"]
-[ext_resource type="AudioStream" uid="uid://bpuk4ot7tih4x" path="res://Assets/Play.wav" id="8_mmixe"]
-[ext_resource type="AudioStream" uid="uid://cg3mh2vraw2ce" path="res://Assets/Select.wav" id="9_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://w42fookjjdli" path="res://Assets/Button Light.png" id="2_27fn8"]
+[ext_resource type="FontFile" uid="uid://dwrhd47e71uvn" path="res://Assets/PixelPurl.ttf" id="3_27fn8"]
+[ext_resource type="Texture2D" uid="uid://tta7wasolwx1" path="res://Assets/Menu.png" id="4_nltto"]
+[ext_resource type="Texture2D" uid="uid://vncqpmxmptdy" path="res://Assets/Button.png" id="5_y4yjw"]
+[ext_resource type="Texture2D" uid="uid://bndwysuctx2su" path="res://Assets/Ball Slider.png" id="6_waa4j"]
+[ext_resource type="Texture2D" uid="uid://ddtkh0j3pju7y" path="res://Assets/SliderBody.png" id="7_ok7cu"]
+[ext_resource type="AudioStream" uid="uid://dsx0wmlk815d7" path="res://Assets/Play.wav" id="8_mmixe"]
+[ext_resource type="AudioStream" uid="uid://btx38s3kdrkey" path="res://Assets/Select.wav" id="9_nt8jn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmtgh"]
 font = ExtResource("3_27fn8")
-font_size = 118
+font_size = 50
 outline_size = 45
 outline_color = Color(0, 0, 0, 1)
 
@@ -20,6 +20,12 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("3_27fn8")
 font_size = 74
 font_color = Color(0.10047465, 0.11751335, 0.1252059, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mmixe"]
+font = ExtResource("3_27fn8")
+font_size = 120
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_irxef"]
 font = ExtResource("3_27fn8")
@@ -52,6 +58,7 @@ grow_vertical = 2
 script = ExtResource("1_waa4j")
 
 [node name="Main Menu" type="Control" parent="." unique_id=1228653895]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,6 +168,167 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+label_settings = SubResource("LabelSettings_kvbvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Death Screen" type="Control" parent="." unique_id=1676002641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.305
+offset_right = 0.3050537
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Death Screen" unique_id=1360329363]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -483.5
+offset_top = 120.0
+offset_right = 483.5
+offset_bottom = 239.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_mmixe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score label" type="Label" parent="Death Screen" unique_id=1689191199]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.305
+offset_top = 256.0
+offset_right = -8.304993
+offset_bottom = 320.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Score:"
+label_settings = SubResource("LabelSettings_tmtgh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Highscore label" type="Label" parent="Death Screen" unique_id=5179834]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.305
+offset_top = 320.0
+offset_right = -8.304993
+offset_bottom = 384.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Highscore:"
+label_settings = SubResource("LabelSettings_tmtgh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Death Screen" unique_id=1426542479]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.6950073
+offset_top = 256.0
+offset_right = 639.69507
+offset_bottom = 320.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "9999999999999999"
+label_settings = SubResource("LabelSettings_tmtgh")
+vertical_alignment = 1
+
+[node name="Highscore" type="Label" parent="Death Screen" unique_id=1657224870]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.6950073
+offset_top = 320.0
+offset_right = 639.69507
+offset_bottom = 384.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "9999999999999999"
+label_settings = SubResource("LabelSettings_tmtgh")
+vertical_alignment = 1
+
+[node name="Play again" type="TextureButton" parent="Death Screen" unique_id=1385465898]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.305
+offset_top = 88.0
+offset_right = -64.30499
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_27fn8")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Death Screen/Play again" unique_id=1186640389]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -32.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play again"
+label_settings = SubResource("LabelSettings_kvbvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="TextureButton" parent="Death Screen" unique_id=271671085]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.695007
+offset_top = 88.0
+offset_right = 447.69507
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_27fn8")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Death Screen/Menu" unique_id=205987944]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -32.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
 label_settings = SubResource("LabelSettings_kvbvy")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -603,5 +771,7 @@ volume_db = -11.838
 [connection signal="pressed" from="Main Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Death Screen/Play again" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Death Screen/Menu" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings/KeybindsButton" to="." method="_on_keybinds_button_pressed"]
 [connection signal="pressed" from="Settings/AudioButton" to="." method="_on_audio_button_pressed"]
