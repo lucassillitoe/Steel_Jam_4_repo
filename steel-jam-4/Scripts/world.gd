@@ -5,6 +5,7 @@ extends Node2D
 @export var Player: CharacterBody2D
 
 var PlayerPosition: int
+var DontDelete: int
 
 #Arrays for keeping track of loading
 var RoomOrderPosition: Array[Vector2] = []
@@ -42,9 +43,8 @@ func SpawnNextRoom():
 
 func ChunkConvert():
 	#Converts the players x and y coordinates to the chunk coordinates
-	var Chunkx = Player.global_position.x / ChunkSize.x
-	var ChunkPosition = Chunkx
-	return ChunkPosition 
+	var Chunkx = $Position.global_position.x / ChunkSize.x
+	return Chunkx
 	
 func ChunkFloor():
 	#Rouds the value of the chunk the player is in down so it directly maps with the array.
@@ -59,14 +59,16 @@ func ChunkUnload():
 		add_child(RoomsVisited[(ChunkFloor() + 3)])
 	#If the plater is past the 4th chunk mark it starts removing the chunks 3 positions behind
 	if ChunkFloor() >= 3:
-		remove_child(RoomsVisited[ChunkFloor() - 3]) 
+		if ChunkFloor() - 3 != DontDelete:
+			remove_child(RoomsVisited[ChunkFloor() - 3]) 
 
 #The function that gets called when the player moves left
 func ChunkLoad():
 	#If there is more than two chunks ahead of the player and the player moves left
 	#It removes that chunk 
 	if (ChunkFloor() + 3) < len(RoomsVisited):
-		remove_child(RoomsVisited[ChunkFloor() + 4]) 
+		if ChunkFloor() + 3 != DontDelete:
+			remove_child(RoomsVisited[ChunkFloor() + 4]) 
 	#If the player is past the third chunk 
 	if ChunkFloor() >= 2:
 		RoomsVisited[ChunkFloor() - 2].position = RoomOrderPosition[ChunkFloor() - 2]
@@ -75,6 +77,7 @@ func ChunkLoad():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	DontDelete = floor(Player.global_position.x / ChunkSize.x)
 	#Checks if the players position changees and if so what direction
 	if ChunkFloor() != PlayerPosition:
 		#If the player is moving to the right it calls the function to unload chunks
