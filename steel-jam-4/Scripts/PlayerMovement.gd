@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 #Parameters for player movement
 const SPEED = 500.0
-
 const ACCLERATION = 5000.0
 const GROUND_DECLERATION = 3000.0
 const AIR_DECLERATION = 500.0
@@ -20,15 +19,18 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	if inputAxis == -1:
 		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play("Walk")
+		$"Walk Particles".emitting = true
 	elif inputAxis == 1:
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play("Walk")
+		$"Walk Particles".emitting = true
 	
 	if inputAxis:
 		var targetSpeed := inputAxis * SPEED
 		velocity.x = move_toward(velocity.x, targetSpeed, ACCLERATION * delta)
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, GROUND_DECLERATION * delta)
+		$"Walk Particles".emitting = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, AIR_DECLERATION * delta)
 	
@@ -39,7 +41,6 @@ func Jump() -> void:
 	##Updates velocity for jump
 	if is_on_floor():
 		$JumpSound.play()
-		$AnimatedSprite2D.play("Jump")
 		velocity.y = -JUMP_VELOCITY
 		playerVelocity = velocity
 

@@ -12,16 +12,17 @@ angular_velocity_max = 444.97998
 gravity = Vector3(0, 98, 0)
 scale_max = 2.0
 scale_over_velocity_max = 184.55
-color = Color(0.5882353, 0.5882353, 0.5882353, 0.5803922)
+color = Color(0.3647059, 0.3647059, 0.3647059, 0.52156866)
 
 [node name="Dust Particle" type="Node2D" unique_id=1162087534]
 position = Vector2(624, 334)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1189253318]
-amount = 18
+position = Vector2(-81, -360)
+amount = 14
 amount_ratio = 0.9066
 texture = ExtResource("1_bgssq")
-lifetime = 3.3899999999999997
+lifetime = 2.7299999999999995
 explosiveness = 0.05
-randomness = 0.55
+randomness = 0.74
 process_material = SubResource("ParticleProcessMaterial_vnfpp")
