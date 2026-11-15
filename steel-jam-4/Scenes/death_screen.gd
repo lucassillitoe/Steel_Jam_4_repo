@@ -1,7 +1,7 @@
 extends Control
 
 @onready var highscore_label: Label = $Highscore
-@onready var score_label: Label = $"../../Camera/UI/Score"
+@export var score_label : Label
 
 func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)

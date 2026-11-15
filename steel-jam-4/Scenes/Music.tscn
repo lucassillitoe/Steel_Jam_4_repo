@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbhm1y8ff063u"]
+
+[ext_resource type="AudioStream" path="res://Assets/Audio/Chain_runners_music.wav" id="1_fghhr"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=1081415694]
+stream = ExtResource("1_fghhr")
