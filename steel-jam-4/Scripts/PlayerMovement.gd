@@ -18,12 +18,13 @@ func MoveHorizontal(inputAxis: float, delta: float) -> void:
 	
 	if inputAxis == -1:
 		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("Walk")
 	elif inputAxis == 1:
 		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("Walk")
 	
 	if inputAxis:
 		var targetSpeed := inputAxis * SPEED
-		$AnimatedSprite2D.play("Walk")
 		velocity.x = move_toward(velocity.x, targetSpeed, ACCLERATION * delta)
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, GROUND_DECLERATION * delta)
@@ -58,7 +59,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if velocity.x <= 0.5 and velocity.y <= 0.5 and velocity.y >= -0.5: 
+	if velocity.x <= 0.5 and velocity.x >= -0.5 and velocity.y <= 0.5 and velocity.y >= -0.5: 
 		$AnimatedSprite2D.play("Idle")
 	
 	#Adds a reference for velocity for other scripts
