@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d31pp4d8bongq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_megsn"]
+load_path = "res://.godot/imported/flying_fist.png-bb43626c3a6f5a5316a157aaae6760fc.ctex"
+
+[sub_resource type="Gradient" id="Gradient_megsn"]
+offsets = PackedFloat32Array(0.5718954, 1)
+colors = PackedColorArray(0.86036915, 0.8603692, 0.8603692, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ksbbd"]
+gradient = SubResource("Gradient_megsn")
+
+[sub_resource type="Curve" id="Curve_yoq75"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1.8214287), 0.0, 0.0, 0, 0, Vector2(0.99462366, 0.6696429), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_87x7s"]
+curve = SubResource("Curve_yoq75")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yoq75"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0, 1)
+angle_min = -676.7
+angle_max = 720.0
+direction = Vector3(0, -100, 0)
+spread = 60.0
+initial_velocity_min = 55.789997
+initial_velocity_max = 55.789997
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 12.019998
+linear_accel_max = 45.489998
+radial_accel_min = -98.71
+radial_accel_max = -45.49
+damping_min = 8.584001
+damping_max = 23.175001
+scale_over_velocity_min = 42.92
+scale_over_velocity_max = 119.829994
+scale_over_velocity_curve = SubResource("CurveTexture_87x7s")
+color_ramp = SubResource("GradientTexture1D_ksbbd")
+
+[node name="Jump Particles" type="GPUParticles2D" unique_id=745775234]
+emitting = false
+texture = SubResource("CompressedTexture2D_megsn")
+one_shot = true
+explosiveness = 0.07
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_yoq75")
