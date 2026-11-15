@@ -17,6 +17,7 @@ var NextSpawnPosition: Vector2 = Vector2(640, -500)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GLOBAL_VARIABLES.currentState = GLOBAL_VARIABLES.state.INPUTTING
 	for i in range (RoomsToLoad):
 		SpawnNextRoom()
 	PlayerPosition = ChunkFloor()
