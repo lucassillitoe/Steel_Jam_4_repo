@@ -226,10 +226,10 @@ offset_right = 631.00006
 offset_bottom = 241.0
 
 [node name="Menu" parent="Camera/UI/Death Screen" index="5" unique_id=1051107045]
-offset_left = 45.999973
-offset_top = 273.0
-offset_right = 430.00003
-offset_bottom = 401.0
+offset_left = -239.00003
+offset_top = 234.0
+offset_right = 145.00003
+offset_bottom = 362.0
 
 [node name="Scorer" parent="." unique_id=1553671718 node_paths=PackedStringArray("scoreDisplay") instance=ExtResource("7_o06y3")]
 scoreDisplay = NodePath("../Camera/UI/Score")
