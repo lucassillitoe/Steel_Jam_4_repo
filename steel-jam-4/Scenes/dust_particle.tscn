@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dteep5hhsg6yb"]
+
+[ext_resource type="Texture2D" uid="uid://oxfxs8o8meue" path="res://Assets/flying_fist.png" id="1_bgssq"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vnfpp"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1280.0
+inherit_velocity_ratio = 0.137
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 444.97998
+gravity = Vector3(0, 98, 0)
+scale_max = 2.0
+scale_over_velocity_max = 184.55
+color = Color(0.5882353, 0.5882353, 0.5882353, 0.5803922)
+
+[node name="Dust Particle" type="Node2D" unique_id=1162087534]
+position = Vector2(624, 334)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1189253318]
+amount = 18
+amount_ratio = 0.9066
+texture = ExtResource("1_bgssq")
+lifetime = 3.3899999999999997
+explosiveness = 0.05
+randomness = 0.55
+process_material = SubResource("ParticleProcessMaterial_vnfpp")
